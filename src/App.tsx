@@ -1,7 +1,7 @@
 import React, {
   Suspense
 } from 'react';
-import { Router, withRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Router, withRouter, Switch } from 'react-router-dom';
 import LazyRoute from '@/components/LazyRoute';
 import Layout from '@/components/Layout';
 import Loadable from '@/components/Loadable';

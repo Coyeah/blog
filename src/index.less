@@ -45,13 +45,19 @@ blockquote {
   padding-left: 15px;
 }
 
-p>code {
-  border-radius: 5px;
-  padding: 0px 6px;
-  margin: 0px 3px;
-  background-color: @primary-color;
-  color: @white;
+p {
+  &>img {
+    width: 100%;
+  }
+  &>code {
+    border-radius: 5px;
+    padding: 0px 6px;
+    margin: 0px 3px;
+    background-color: @primary-color;
+    color: @white;
+  }
 }
+
 
 pre {
   border: 2px solid @primary-color;
