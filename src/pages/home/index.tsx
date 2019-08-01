@@ -7,6 +7,7 @@ const Home: React.SFC = (props: any) => {
       <div className={styles.text}>
         Welcome to the <b>Personal Internet Domicile</b> of Coyeah
       </div>
+      <div className={styles.block} />
     </div>
   )
 }
