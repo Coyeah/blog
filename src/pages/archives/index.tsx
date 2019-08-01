@@ -10,7 +10,7 @@ const Archives: React.SFC = (props: any) => {
 
   const {data: dataSource = [], status: {loading}} = data;
   return (
-    <Loadable loading={false}>
+    <Loadable loading={loading}>
       <ul className={styles.layout}>
         {dataSource.length > 0 && dataSource.map(({number, title}) => (
           <li key={number}><Link to={`/post/${number}`}>{title}</Link></li>

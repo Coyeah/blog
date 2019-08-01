@@ -1,15 +1,15 @@
 import React from 'react';
-
-const style = {
-  textAlign: 'center',
-  fontSize: '1.6rem',
-  minHeight: '80vh',
-};
+import styles from './index.module.less';
 
 const Loadable = (props: any) => {
-  const {children, loading, ...restProps} = props;
+  const {children, loading, text, ...restProps} = props;
   if (!children || loading) return (
-    <div style={style} {...restProps}>Loading...</div>
+    <div className={styles.layout} {...restProps}>
+      <div className={styles.block} />
+      {!!text && (
+        <p>{text}</p>
+      )}
+    </div>
   );
   
   return (
