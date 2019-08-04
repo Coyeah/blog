@@ -6,7 +6,7 @@ import Footer from '@/components/Layout/Footer';
 import useFetch from '@/components/useHooks/useFetch';
 import history from '@/utils/history';
 import styles from './index.module.less';
-import {info} from '@/config';
+import {website} from '@/config';
 import {env} from '@/env';
 
 const Post: React.SFC = (props: any) => {
@@ -27,9 +27,9 @@ const Post: React.SFC = (props: any) => {
       <hr />
       <Markdown source={body} />
       <hr />
-      <p>原文作者：<a href={info.github}>{info.author}</a></p>
+      <p>原文作者：<a href={website.github}>{website.author}</a></p>
       <p>原文链接：<a href={`${env.location}${pathname}`}>{`${env.location}${pathname}`}</a></p>
-      <p>许可协议：<a href={info.licenses}>知识共享署名-非商业性使用 4.0 国际许可协议</a></p>
+      <p>许可协议：<a href={website.licenses}>知识共享署名-非商业性使用 4.0 国际许可协议</a></p>
       <Footer />
     </Loadable>
   )
