@@ -5,12 +5,12 @@ import { Router, withRouter, Switch } from 'react-router-dom';
 import LazyRoute from '@/components/LazyRoute';
 import Layout from '@/components/Layout';
 import Loadable from '@/components/Loadable';
-import {routeConfig} from './config';
-import recorder from '@/utils/recorder';
+import { routeConfig } from './config';
+import { visitor } from '@/utils/leancloud';
 
 const LayoutRoute = withRouter((props: object) => {
   useEffect(() => {
-    recorder();
+    visitor();
   }, []);
   return (
     <Layout>

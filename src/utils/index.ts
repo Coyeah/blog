@@ -7,7 +7,7 @@ import _ from 'lodash';
  * @param  sessionStorage [会话存储对象：sessionStorage / localStorage]
  * @return                [description]
  */
-export const storage = (key, value, memory = localStorage) => {
+export const storage = (key?: any, value?: any, memory = localStorage) => {
   if (_.isPlainObject(key)) {
     // key 为对象的情况下，分开存储
     _.forEach(key, (value, key) => {
@@ -36,7 +36,7 @@ export const storage = (key, value, memory = localStorage) => {
     memory.clear();
   }
 }
-export const session = (key, value) => {
+export const session = (key?: any, value?: any) => {
   return storage(key, value, sessionStorage);
 }
 
