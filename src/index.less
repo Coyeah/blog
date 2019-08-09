@@ -45,16 +45,15 @@ blockquote {
   padding-left: 15px;
 }
 
-p {
-  &>img {
+p, ul {
+  & img {
     width: 100%;
   }
-  &>code {
+  & code {
     border-radius: 5px;
     padding: 0px 6px;
     margin: 0px 3px;
-    background-color: @primary-color;
-    color: @white;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 }
 

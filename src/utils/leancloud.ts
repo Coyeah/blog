@@ -60,7 +60,8 @@ export const reader = (route: string, title: string) => {
 }
 
 export const useReader = () => {
-  const [number, setNumber] = useState(107);
+  const [number, setNumber] = useState(0);
+  const [times, setTimes] = useState(0);
   const getNumber = useCallback((title: string) => {
     if (!title) return;
     new Promise((resolve, reject) => {
@@ -73,10 +74,17 @@ export const useReader = () => {
       });
     }).then((data: any) => {
       if (!!data) {
+        setTimes(0);
         setNumber(data.toJSON().times);
+      } else {
+        if (times > 3) return;
+        setTimes(times + 1);
+        setTimeout(() => {
+          getNumber(title);
+        }, 3000);
       }
     });
-  }, []);
+  }, [times]);
 
   return [number, getNumber];
 } 
