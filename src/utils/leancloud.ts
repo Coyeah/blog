@@ -60,31 +60,26 @@ export const reader = (route: string, title: string) => {
 }
 
 export const useReader = () => {
-  const [number, setNumber] = useState(0);
-  const [times, setTimes] = useState(0);
+  const [number, setNumber] = useState(`-`);
   const getNumber = useCallback((title: string) => {
     if (!title) return;
-    new Promise((resolve, reject) => {
-      let query = new AV.Query('Reader');
-      query.contains('title', title);
-      query.first().then((data: any) => {
-        resolve(data);
-      }, (error: any) => {
-        reject(error);
+    setTimeout(() => {
+      new Promise((resolve, reject) => {
+        let query = new AV.Query('Reader');
+        query.contains('title', title);
+        query.first().then((data: any) => {
+          resolve(data);
+        }, (error: any) => {
+          reject(error);
+        });
+      }).then((data: any) => {
+        if (!!data) {
+          setNumber(data.toJSON().times);
+        }
       });
-    }).then((data: any) => {
-      if (!!data) {
-        setTimes(0);
-        setNumber(data.toJSON().times);
-      } else {
-        if (times > 3) return;
-        setTimes(times + 1);
-        setTimeout(() => {
-          getNumber(title);
-        }, 3000);
-      }
-    });
-  }, [times]);
+    }, 3000);
+
+  }, []);
 
   return [number, getNumber];
 } 
