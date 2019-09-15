@@ -1,0 +1,26 @@
+@import '../utils/theme.less';
+
+.layout {
+  margin: 0;
+  font-size: 4rem;
+  line-height: 1.2;
+
+  .text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    font-weight: 300;
+  }
+
+  .block {
+    position: fixed;
+    width: 50vw;
+    height: 50px;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: @cyan;
+  }
+}
