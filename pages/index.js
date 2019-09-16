@@ -3,7 +3,7 @@ import styles from './index.less';
 
 export default function Index() {
   return (
-    <Layout>
+    <Layout isLight>
       <div className={styles.layout}>
         <div className={styles.text}>
           Welcome to the <b>Personal Internet Domicile</b> of Coyeah

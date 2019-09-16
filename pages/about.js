@@ -20,10 +20,11 @@ const intro = `
 export default function About() {
 
   return (
-    <Layout isLight title="about">
-      <h1>Welcome Visit</h1>
-      <div className="avatar" style={image} />
-      {/* <div className={styles.avatar} style={image} /> */}
+    <Layout title="关于">
+      <div className={styles.layout}>
+        <h1>Welcome Visit</h1>
+        <div className="avatar" style={image} />
+      </div>
       <Markdown source={intro} />
     </Layout>
   )

@@ -21,4 +21,4 @@ module.exports = compose(
   webpack(config, options) {
     return config
   }
-})
+});

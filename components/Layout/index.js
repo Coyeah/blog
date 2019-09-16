@@ -4,10 +4,16 @@ import Head from 'next/head';
 import Link from '../Link';
 import styles from './index.less';
 
-const Layout = ({title, isLight = false, children}) => {
+const Footer = (props) => (
+  <div className={styles.footer}>
+    © 2018 - 2019  Coyeah Chen
+  </div>
+);
+
+const Layout = ({ title, isLight = false, children, width, footer }) => {
   const cx = classNames(styles.layout, {
-    [styles['layout-dark']]: !isLight,
-    [styles['layout-light']]: isLight,
+    [styles['layout-dark']]: isLight,
+    [styles['layout-light']]: !isLight,
   });
   return (
     <div className={cx}>
@@ -18,9 +24,10 @@ const Layout = ({title, isLight = false, children}) => {
         <div><Link href="/" text="coyeah" /></div>
         <div><Link href="/blog" text="blog" />, <Link href="/about" text="about" /></div>
       </div>
-      <div className={styles.main}>
+      <div className={styles.main} style={{width}}>
         {children}
       </div>
+      {footer && <Footer />}
     </div>
   )
 }
