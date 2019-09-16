@@ -30,8 +30,7 @@ const Blog = (props) => {
           {data && data.map(({title, number}) => (
             <li key={number} className={styles['blog-item']}>
               <Link
-                href='/post/[id]'
-                as={`/post/${number}`}
+                href={`/post?id=${number}`}
                 text={title}
               />
             </li>

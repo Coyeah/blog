@@ -1,0 +1,57 @@
+@import '../utils/theme.less';
+
+.label {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.markdown {
+
+  // :link ( 有链接属性的时候显示 -- href 属性 )
+  // :visited ( 链接地址被访问过 )
+  // :hover ( 鼠标移动到DOM节点上面 )
+  // :active ( 鼠标点击瞬间 )
+  a {
+    transition: all 0.2s;
+
+    &:link, &:visited, &:hover, &:active {
+      text-decoration: none;
+    }
+
+    &:link, &:visited {
+      color: @primary-color;
+    }
+
+    &:hover, &:active {
+      color: @black;
+    }
+  }
+
+  blockquote {
+    border-left: 4px solid @primary-color;
+    margin: 0;
+    padding-left: 15px;
+  }
+
+  p, ul {
+    & img {
+      width: 100%;
+    }
+    & code {
+      border-radius: 5px;
+      padding: 0px 6px;
+      margin: 0px 3px;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+
+  pre {
+    border: 2px solid @primary-color;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 12px;
+    overflow: auto;
+  }
+
+}

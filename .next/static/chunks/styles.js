@@ -30,7 +30,7 @@ module.exports = {"layout":"layout___3IWBe","nav":"nav___1AMQz","main":"main___3
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1568610414778");
+            injectCss(link, link.href.split("?")[0] + "?unix=1568621350527");
           });
       }
     }
@@ -68,7 +68,7 @@ module.exports = {"layout":"layout___xlObq","focus":"focus___2xir3"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1568598637887");
+            injectCss(link, link.href.split("?")[0] + "?unix=1568621350537");
           });
       }
     }
@@ -76,15 +76,53 @@ module.exports = {"layout":"layout___xlObq","focus":"focus___2xir3"};;
 
 /***/ }),
 
-/***/ "./pages/blog.less":
+/***/ "./pages/index.less":
+/*!**************************!*\
+  !*** ./pages/index.less ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+module.exports = {"layout":"layout___3KKqz","text":"text___1ZXl1","block":"block___1pExI"};;
+    if (true) {
+      var injectCss = function injectCss(prev, href) {
+        var link = prev.cloneNode();
+        link.href = href;
+        link.onload = function() {
+          prev.parentNode.removeChild(prev);
+        };
+        prev.stale = true;
+        prev.parentNode.insertBefore(link, prev);
+      };
+      module.hot.dispose(function() {
+        window.__webpack_reload_css__ = true;
+      });
+      if (window.__webpack_reload_css__) {
+        module.hot.__webpack_reload_css__ = false;
+        console.log("[HMR] Reloading stylesheets...");
+        var prefix = document.location.protocol + '//' + document.location.host;
+        document
+          .querySelectorAll("link[href][rel=stylesheet]")
+          .forEach(function(link) {
+            if (!link.href.match(prefix) || link.stale) return;
+            injectCss(link, link.href.split("?")[0] + "?unix=1568621350347");
+          });
+      }
+    }
+  
+
+/***/ }),
+
+/***/ "./pages/post.less":
 /*!*************************!*\
-  !*** ./pages/blog.less ***!
+  !*** ./pages/post.less ***!
   \*************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"blog-item":"blog-item___2ZW-k"};;
+module.exports = {"label":"label___NLreX","markdown":"markdown___1zFJf"};;
     if (true) {
       var injectCss = function injectCss(prev, href) {
         var link = prev.cloneNode();
@@ -106,45 +144,7 @@ module.exports = {"blog-item":"blog-item___2ZW-k"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1568600898556");
-          });
-      }
-    }
-  
-
-/***/ }),
-
-/***/ "./pages/post/index.less":
-/*!*******************************!*\
-  !*** ./pages/post/index.less ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-module.exports = {"label":"label___1FH3t","markdown":"markdown___oaKFl"};;
-    if (true) {
-      var injectCss = function injectCss(prev, href) {
-        var link = prev.cloneNode();
-        link.href = href;
-        link.onload = function() {
-          prev.parentNode.removeChild(prev);
-        };
-        prev.stale = true;
-        prev.parentNode.insertBefore(link, prev);
-      };
-      module.hot.dispose(function() {
-        window.__webpack_reload_css__ = true;
-      });
-      if (window.__webpack_reload_css__) {
-        module.hot.__webpack_reload_css__ = false;
-        console.log("[HMR] Reloading stylesheets...");
-        var prefix = document.location.protocol + '//' + document.location.host;
-        document
-          .querySelectorAll("link[href][rel=stylesheet]")
-          .forEach(function(link) {
-            if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1568613164784");
+            injectCss(link, link.href.split("?")[0] + "?unix=1568621350504");
           });
       }
     }

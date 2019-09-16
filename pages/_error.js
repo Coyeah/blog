@@ -14,7 +14,7 @@ class Error extends React.Component {
       <Layout>
         <div className={styles.layout}>
           <div className={styles.text} style={{fontSize: '1.6rem', textAlign: 'center'}}>
-              {statusCode} | {
+              {statusCode ? `${statusCode} | ` : ''}{
                 this.props.statusCode
                   ? `An error ${this.props.statusCode} occurred on server`
                   : 'An error occurred on client'
