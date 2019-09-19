@@ -60,6 +60,7 @@ class MyDocument extends Document {
                   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
                   <link rel="icon" href="/static/favicon.ico" type="image/x-icon"></link>
                   <style>{style}</style>
+                  {/* <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.12.0/dist/av-min.js"></script> */}
                 </Head>
                 <body>
                     <Main />

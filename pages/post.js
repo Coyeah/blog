@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import Loadable from '../components/Loadable';
 import SEO from '../components/SEO';
 import { getBlogItem } from '../apis';
+import { reader, useReader } from '../utils/leancloud';
 import {website, env} from '../utils/config';
 import styles from './post.less';
 
@@ -34,7 +35,14 @@ const Post = (props) => {
       getData(id);
     }
   }, [id]);
+  const [times, getTimes] = useReader();
   const { title = '', labels = [], body } = data || {};
+  useEffect(() => {
+    if (title) {
+      reader(asPath, title);
+      getTimes(title);
+    }
+  }, [title])
   return (
     <>
       <SEO
@@ -46,6 +54,7 @@ const Post = (props) => {
       <Layout title={title} width="65%" footer>
         <Loadable loading={code !== 2}>
           <h1>{title}</h1>
+          <span className={styles.label}>已阅读 {times} 次</span>
           {labels.map(({id, name}) => (<i key={id} className={styles.label}># {name}</i>))}
           <hr />
           <div className={styles.markdown}>

@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import Head from 'next/head';
 import Link from '../Link';
+import { visitor } from '../../utils/leancloud';
 import styles from './index.less';
 
 const Footer = (props) => (
@@ -11,6 +12,9 @@ const Footer = (props) => (
 );
 
 const Layout = ({ title, isLight = false, children, width, footer }) => {
+  useEffect(() => {
+    visitor();
+  }, []);
   const cx = classNames(styles.layout, {
     [styles['layout-dark']]: isLight,
     [styles['layout-light']]: !isLight,
