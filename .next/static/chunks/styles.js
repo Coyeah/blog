@@ -30,7 +30,7 @@ module.exports = {"layout":"layout___3IWBe","nav":"nav___1AMQz","main":"main___3
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1568621350527");
+            injectCss(link, link.href.split("?")[0] + "?unix=1568886964173");
           });
       }
     }
@@ -68,7 +68,83 @@ module.exports = {"layout":"layout___xlObq","focus":"focus___2xir3"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1568621350537");
+            injectCss(link, link.href.split("?")[0] + "?unix=1568884897490");
+          });
+      }
+    }
+  
+
+/***/ }),
+
+/***/ "./pages/about.less":
+/*!**************************!*\
+  !*** ./pages/about.less ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+module.exports = {"layout":"layout___cQUQi"};;
+    if (true) {
+      var injectCss = function injectCss(prev, href) {
+        var link = prev.cloneNode();
+        link.href = href;
+        link.onload = function() {
+          prev.parentNode.removeChild(prev);
+        };
+        prev.stale = true;
+        prev.parentNode.insertBefore(link, prev);
+      };
+      module.hot.dispose(function() {
+        window.__webpack_reload_css__ = true;
+      });
+      if (window.__webpack_reload_css__) {
+        module.hot.__webpack_reload_css__ = false;
+        console.log("[HMR] Reloading stylesheets...");
+        var prefix = document.location.protocol + '//' + document.location.host;
+        document
+          .querySelectorAll("link[href][rel=stylesheet]")
+          .forEach(function(link) {
+            if (!link.href.match(prefix) || link.stale) return;
+            injectCss(link, link.href.split("?")[0] + "?unix=1568884895462");
+          });
+      }
+    }
+  
+
+/***/ }),
+
+/***/ "./pages/blog.less":
+/*!*************************!*\
+  !*** ./pages/blog.less ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+module.exports = {"blog-item":"blog-item___2ZW-k"};;
+    if (true) {
+      var injectCss = function injectCss(prev, href) {
+        var link = prev.cloneNode();
+        link.href = href;
+        link.onload = function() {
+          prev.parentNode.removeChild(prev);
+        };
+        prev.stale = true;
+        prev.parentNode.insertBefore(link, prev);
+      };
+      module.hot.dispose(function() {
+        window.__webpack_reload_css__ = true;
+      });
+      if (window.__webpack_reload_css__) {
+        module.hot.__webpack_reload_css__ = false;
+        console.log("[HMR] Reloading stylesheets...");
+        var prefix = document.location.protocol + '//' + document.location.host;
+        document
+          .querySelectorAll("link[href][rel=stylesheet]")
+          .forEach(function(link) {
+            if (!link.href.match(prefix) || link.stale) return;
+            injectCss(link, link.href.split("?")[0] + "?unix=1568884897362");
           });
       }
     }
@@ -106,7 +182,7 @@ module.exports = {"layout":"layout___3KKqz","text":"text___1ZXl1","block":"block
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1568621350347");
+            injectCss(link, link.href.split("?")[0] + "?unix=1568884881442");
           });
       }
     }
@@ -144,7 +220,7 @@ module.exports = {"label":"label___NLreX","markdown":"markdown___1zFJf"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1568621350504");
+            injectCss(link, link.href.split("?")[0] + "?unix=1568886557260");
           });
       }
     }
