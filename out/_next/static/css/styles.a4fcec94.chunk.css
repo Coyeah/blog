@@ -84,14 +84,28 @@
   border-radius: 5px;
   padding: 0px 6px;
   margin: 0px 3px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .markdown___1zFJf pre {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
   border-left: 5px solid #00adb5;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   padding: 12px 24px;
   overflow: auto;
+}
+.markdown___1zFJf table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.markdown___1zFJf table th,
+.markdown___1zFJf table td {
+  border: 1px solid #00adb5;
+  padding: 6px 12px;
+  transition: all 0.3s;
+}
+.markdown___1zFJf table th:hover,
+.markdown___1zFJf table td:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
