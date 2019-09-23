@@ -71,9 +71,10 @@
   color: #222831;
 }
 .markdown___1zFJf blockquote {
-  border-left: 4px solid #00adb5;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-left: 5px solid #00adb5;
   margin: 0;
-  padding-left: 15px;
+  padding: 12px 24px;
 }
 .markdown___1zFJf p img,
 .markdown___1zFJf ul img {
@@ -89,8 +90,8 @@
 .markdown___1zFJf pre {
   background-color: rgba(0, 0, 0, 0.05);
   border-left: 5px solid #00adb5;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-right: 5px solid #00adb5;
+  border-radius: 5px;
   padding: 12px 24px;
   overflow: auto;
 }
