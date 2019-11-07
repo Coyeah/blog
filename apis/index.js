@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import { github_api_prefix } from './config';
 
@@ -21,11 +21,6 @@ const useWrappedFetch = (request) => (responseFilter) => {
       return Promise.reject(ex);
     }
   }
-
-  const setOwnData = useCallback((data) => {
-    setData(data);
-    setCode(2);
-  }, []);
 
   return [{
     data,

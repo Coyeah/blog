@@ -8,8 +8,16 @@ import styles from './blog.less';
 
 const sessionKey = 'BLOG_TOTAL_SESSION_KEY';
 
+const filter = item => {
+  const { author_association, html_url } = item; 
+  return (
+    author_association === 'OWNER'
+    && html_url.includes('github.com/Coyeah/blog/issues')
+  )
+}
+
 const Blog = (props) => {
-  const [{data, code}, getData, setData] = getBlogTotal(data => data.items.map(({title, number}) => ({
+  const [{data, code}, getData, setData] = getBlogTotal(data => data.items.filter(filter).map(({title, number}) => ({
     title, number
   })));
   useEffect(() => {
