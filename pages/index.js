@@ -1,17 +1,9 @@
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import styles from './index.less';
+/*
+ * @Author: ye.chen 
+ * @Date: 2020-05-11 09:57:01 
+ * @Last Modified by: ye.chen
+ * @Last Modified time: 2020-05-11 10:02:06
+ */
+import React from 'react';
 
-export default function Index() {
-  return (
-    <Layout isLight>
-      <SEO />
-      <div className={styles.layout}>
-        <div className={styles.text}>
-          Welcome to the <b>Personal Internet Domicile</b> of Coyeah
-        </div>
-        <div className={styles.block} />
-      </div>
-    </Layout>
-  )
-}
+export default () => <div>Welcome to next.js!</div>
