@@ -4,7 +4,7 @@
   "description": "[Welcome to the Personal Internet Domicile of Coyeah](https://wwww.coyeah.top)",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 9000",
     "build": "next build",
     "start": "next start"
   },
@@ -22,9 +22,27 @@
   },
   "homepage": "https://github.com/Coyeah/blog#readme",
   "dependencies": {
-    "next": "^9.3.6",
+    "@material-ui/core": "^4.9.13",
+    "@material-ui/icons": "^4.9.1",
+    "csstype": "^2.6.10",
+    "isomorphic-fetch": "^2.2.1",
+    "less": "^3.11.1",
+    "less-loader": "^6.1.0",
+    "next": "^9.4.0",
+    "next-images": "^1.4.0",
+    "next-seo": "^4.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1",
     "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@types/next": "^9.0.0",
+    "@types/node": "^13.13.5",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "^5.1.0",
+    "typescript": "^3.8.3"
   }
 }
