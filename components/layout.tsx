@@ -10,7 +10,7 @@ export interface LayoutProps {
   seo?: SeoProps | boolean;
   title?: string;
   desc?: string;
-
+  error?: boolean;
   [name: string]: any;
 }
 
@@ -26,17 +26,21 @@ const WrappedLayout = styled.div`
   }
 `;
 
-const WrappedContent = styled.div`
-  flex: 1;
+const WrappedError = styled.div`
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2rem;
 `;
 
 const Layout: React.FC<LayoutProps> = props => {
-  const { seo, title = websiteConfig.description, desc, ...restProps } = props;
+  const { seo = true, title, desc, error = false, children, ...restProps } = props;
   const seoProps = props.seo === true ? {} : props.seo;
 
   let headTitle = title;
-  if (desc) {
-    headTitle += ` | ${desc}`;
+  if (!title) {
+    headTitle = websiteConfig.description;
+  } else {
+    headTitle += ` | ${desc || websiteConfig.description}`;
   }
 
   return (
@@ -47,9 +51,13 @@ const Layout: React.FC<LayoutProps> = props => {
       </Head>
       <WrappedLayout>
         <Header />
-        <WrappedContent>
-          <div style={{ height: '100%' }} {...restProps}>{props.children}</div>
-        </WrappedContent>
+        <div style={{ flex: 1 }}>
+          <div style={{ height: '100%', padding: '2rem' }} className="root" {...restProps}>
+            {error ? (
+              <WrappedError>Somethins is wrong!</WrappedError>
+            ) : children}
+          </div>
+        </div>
         <Footer />
       </WrappedLayout>
     </>

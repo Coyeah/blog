@@ -1,14 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import styled, { StyledComponent } from 'styled-components';
-import Button from '@material-ui/core/Button';
 import websiteConfig from '../common/website';
-import { primaryColor, white } from '../common/theme';
+import { primaryColor, black } from '../common/theme';
 
 const WrappedLayout = styled.div`
-  border-top: 0.3rem solid ${primaryColor};
   height: 6rem;
-  padding: 0px 1rem;
   line-height: 6rem;
   display: flex;
   justify-content: space-between;
@@ -23,25 +20,40 @@ const WrappedMenu = styled.div`
   display: flex;
   justify-content: space-between;
   align-item: center;
+
+  &>span {
+    margin: 0px 1.2rem;
+  }
 `;
 
 const WrappedSpan: StyledComponent<"span", any, { size?: number }, never> = styled.span`
   font-size: ${props => (props as any).size || '1'}rem;
   font-weight: bold;
+
+  & > a {
+    &,
+    &:link,
+    &:visited {
+      color: ${black};
+    }
+
+    &:hover,
+    &:active {
+      color: ${primaryColor};
+    }
+  }
 `;
 
 const Header: React.FC = props => {
-
   return (
-    <WrappedLayout>
-      <Link href="/" prefetch>
-        <Button size="large"><WrappedSpan size={1.6}>{websiteConfig.title}</WrappedSpan></Button>
-      </Link>
-      <WrappedMenu>
-        <Link href="/list" prefetch><Button><WrappedSpan>博文</WrappedSpan></Button></Link>
-        <Link href="/about" prefetch><Button><WrappedSpan>关于</WrappedSpan></Button></Link>
-      </WrappedMenu>
-    </WrappedLayout>
+    <div style={{ borderTop: `0.3rem solid ${primaryColor}` }}>
+      <WrappedLayout className="root">
+        <WrappedSpan size={1.6}><Link href="/" ><a>{websiteConfig.title}</a></Link></WrappedSpan>
+        <WrappedMenu>
+          <WrappedSpan><Link href="/about" ><a>关于</a></Link></WrappedSpan>
+        </WrappedMenu>
+      </WrappedLayout>
+    </div>
   );
 };
 

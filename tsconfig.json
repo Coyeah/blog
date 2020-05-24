@@ -42,7 +42,10 @@
     "node_modules"
   ],
   "include": [
-    "./*",
+    ".",
+    "pages",
+    "components",
     "global.d.ts",
+    "typings"
   ]
 }

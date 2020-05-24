@@ -1,23 +1,56 @@
 import React from 'react';
-import styled from 'styled-components';
-import Layout from '../components/layout';
-import Intro from '../layout/intro';
+import { getBlogList, getBlogTotal } from '@/common/apis';
+import Layout from '@/components/layout';
+import ListItem from '@/components/ListItem';
+import Pagination, { PaginationProps } from '@/components/pagination';
 
-const Wrapped = styled.div`
-  font-size: 1.6rem;
-  line-height: 3rem;
-`;
-
-const Home: React.FC = props => {
-  return (
-    <Layout seo={true}>
-      <Intro>
-        <Wrapped>Welcome to the</Wrapped>
-        <Wrapped><b>Personal Internet Domicile</b></Wrapped>
-        <Wrapped>of Coyeah</Wrapped>
-      </Intro>
-    </Layout>
-  )
+interface Item {
+  title: string;
+  number: number;
 }
 
-export default Home;
+interface ListProps {
+  result: Item[];
+  pagination: PaginationProps;
+  error: boolean;
+}
+
+function List(props: ListProps) {
+  const { result = [], pagination, error } = props;
+
+  return (
+    <Layout error={error}>
+      {result.map(item => {
+        return (
+          <ListItem key={item.number} href="/" text={item.title} />
+        )
+      })}
+      <Pagination {...pagination} />
+    </Layout>
+  );
+}
+
+List.getInitialProps = async (ctx: any) => {
+  const { page = 1 } = ctx.query;
+  let result: any[] = [];
+  let pagination = {
+    total: 0,
+    page,
+    pageSize: 15,
+  };
+  let error: boolean = false;
+  try {
+    await getBlogList(pagination.page, pagination.pageSize).then(res => {
+      result = res;
+    });
+    await getBlogTotal().then(res => {
+      pagination.total = res.length;
+    })
+  } catch (ex) {
+    console.error(ex);
+    error = true;
+  }
+  return { result, pagination, error } as ListProps;
+}
+
+export default List;

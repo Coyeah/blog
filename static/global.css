@@ -18,16 +18,32 @@ body {
   font-family: 'Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif';
 }
 
+.root {
+  width: 600px;
+  margin: auto;
+}
+
+@media (max-width: 992px) {
+  .root {
+    width: 80%;
+  }
+}
+
 @media (max-width: 768px) {
 
   html,
   body {
     font-size: 12px;
   }
+
+  .root {
+    width: 90%;
+  }
 }
 
 * {
   box-sizing: border-box;
+  color: #222831;
 }
 
 ::selection {

@@ -22,12 +22,12 @@
   },
   "homepage": "https://github.com/Coyeah/blog#readme",
   "dependencies": {
-    "@material-ui/core": "^4.9.13",
-    "@material-ui/icons": "^4.9.1",
     "csstype": "^2.6.10",
+    "es6-promise": "^4.2.8",
     "isomorphic-fetch": "^2.2.1",
     "less": "^3.11.1",
     "less-loader": "^6.1.0",
+    "lodash": "^4.17.15",
     "next": "^9.4.0",
     "next-images": "^1.4.0",
     "next-seo": "^4.4.0",
@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@types/lodash": "^4.14.150",
     "@types/next": "^9.0.0",
     "@types/node": "^13.13.5",
     "@types/react": "^16.9.35",
