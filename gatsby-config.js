@@ -19,6 +19,7 @@ module.exports = {
     since: 2018,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,

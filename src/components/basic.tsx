@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react';
+import { createGlobalStyle } from "styled-components"
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { LayoutDiv, HeaderDiv, ContentDiv, FooterDiv, NavDiv, size } from '../styled/layout';
@@ -20,8 +21,8 @@ export default (props: PropsWithChildren<BasicProps>) => {
     <>
     <Helmet title={title}>
       <link rel="shortcut icon" href="/favicon.ico" />
-      <style media="screen">{globalStyle}</style>
     </Helmet>
+    <GlobalStyle />
     <LayoutDiv>
       <SEO {...seo} />
       <div style={{borderBottom: `1px solid #bbb`}}>
@@ -43,7 +44,7 @@ export default (props: PropsWithChildren<BasicProps>) => {
   )
 }
 
-const globalStyle = `
+const GlobalStyle = createGlobalStyle`
 html,
 body,
 #___gatsby,

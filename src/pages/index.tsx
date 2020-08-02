@@ -24,10 +24,10 @@ margin-bottom: 1rem;
 const ItemHeader: React.FC<ItemHeaderProps> = props => {
   const { title, date, path } = props;
   return (
-    <Link to={path}>
+    <>
       <TitleDiv>{title}</TitleDiv>
       <TimeDiv>{date}</TimeDiv>
-    </Link>
+    </>
   )
 }
 
@@ -38,10 +38,12 @@ export default () => {
       {blogList.map((item: BlogItem) => {
         const { frontmatter, id, excerpt } = item.node;
         return (
-          <ItemDiv key={id}>
-            <ItemHeader key={id} {...frontmatter} />
-            <div>{excerpt}</div>
-          </ItemDiv>
+          <Link to={frontmatter.path} key={id}>
+            <ItemDiv key={id}>
+              <ItemHeader key={id} {...frontmatter} />
+              <div style={{ color: theme.black}}>{excerpt}</div>
+            </ItemDiv>
+          </Link>
         )
       })}
     </Basic>
