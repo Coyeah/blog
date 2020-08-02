@@ -20,6 +20,7 @@
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-source-filesystem": "^2.3.23",
     "gatsby-source-graphql": "^2.6.2",
+    "gatsby-transformer-remark": "^2.8.27",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -30,6 +31,8 @@
   "devDependencies": {
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
+    "@types/react-helmet": "^6.0.0",
+    "@types/styled-components": "^5.1.2",
     "prettier": "2.0.5"
   },
   "repository": {

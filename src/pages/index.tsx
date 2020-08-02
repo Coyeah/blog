@@ -1,50 +1,30 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby';
 import Basic from '../layouts/basic';
-import { ExceptionDiv } from "./404";
-
-const List: React.FC<Issues> = props => {
-  const { nodes = [], edges, totalCount } = props;
-  return (
-    <>
-      {nodes.map((node, key) => {
-
-        return (
-          <div key={`${key}-${node.number}`}>{node.title}</div>
-        )
-      })}
-    </>
-  )
-}
 
 export default () => {
-  const { cms: { repository = null } } = useStaticQuery(query);
-  const issues: Issues | null = repository ? repository.issues : null;
+  const { allMarkdownRemark: { edges: blogList } } = useStaticQuery(query);
   return (
     <Basic>
-      {issues ? (
-        <List {...issues} />
-      ) : (
-        <ExceptionDiv>
-          <div>未知异常，请刷新或稍后重试。</div>
-        </ExceptionDiv>
-      )}
+      {(blogList as BlogList).map(item => {
+        const { frontmatter: { title, date, tag }, id } = item.node;
+        return (
+          <p key={id}>{title} - {date}</p>
+        )
+      })}
     </Basic>
   )
 }
 
 const query = graphql`
-  query issues {
-    cms {
-      repository(name: "blog", owner: "Coyeah") {
-        issues(filterBy: {createdBy: "Coyeah", states: OPEN}, first: 10, orderBy: {field: CREATED_AT, direction: DESC}, after: "Y3Vyc29yOnYyOpK5MjAxOS0wNy0wN1QyMDo1NTo0NCswODowMM4btpK9") {
-          nodes {
+  query blogList {
+    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+      edges {
+        node {
+          frontmatter {
             title
-            number
-          }
-          totalCount
-          edges {
-            cursor
+            date
+            tag
           }
         }
       }
@@ -52,8 +32,15 @@ const query = graphql`
   }
 `;
 
-interface Issues {
-  nodes: { title: string, number: number }[],
-  totalCount: number;
-  edges: { cursor: string }[]
+interface BlogItem {
+  node: {
+    frontmatter: {
+      title: string;
+      date: string;
+      tag?: string;
+    },
+    id: string;
+  }
 }
+
+type BlogList = Array<BlogItem>;

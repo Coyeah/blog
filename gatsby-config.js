@@ -21,19 +21,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-source-graphql',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        typeName: `GraphqaCMS`,
-        fieldName: 'cms',
-        url: 'https://api.github.com/graphql',
-        refetchInterval: 60,
-        headers: {
-          Authorization: `Bearer c95e644cab5e2761ff674d943ee76f328a8b74e2`,
-        },
-        fetchOptions: {},
-      }
-    }
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
+    'gatsby-transformer-remark'
   ],
 }
-
-// c95e644cab5e2761ff674d943ee76f328a8b74e2
