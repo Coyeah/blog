@@ -1,6 +1,6 @@
 import React from "react"
 import styled from 'styled-components';
-import Basic from '../layouts/basic';
+import Basic from '../components/basic';
 
 export const ExceptionDiv = styled.div`
   height: 100%;

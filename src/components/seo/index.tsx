@@ -129,18 +129,16 @@ const SEO: React.FC<SeoProps> = props => {
 
   return (
     <>
-      <Helmet title={seo.title}>
+      <Helmet>
         <html lang={siteLanguage} />
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
-        <link rel="shortcut icon" href="/favicon.ico" />
         {props.article ? (
           <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>
         ) : (
           <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>
         )}
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
-        {/* <style media="screen">{globalStyle}</style> */}
       </Helmet>
       <Facebook
         desc={seo.description}

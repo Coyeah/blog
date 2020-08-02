@@ -25,6 +25,7 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+        excerpt_separator: `<!-- endexcerpt -->`,
       },
     },
     'gatsby-transformer-remark'
