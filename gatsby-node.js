@@ -4,7 +4,7 @@ const {
 } = require(`gatsby-source-filesystem`);
 
 const query = `
-query posts {
+query PostsNode {
   allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
     edges {
       node {

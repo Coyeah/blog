@@ -7,6 +7,7 @@ const theme: {
   white: '#eee',
   deepBlack: '#222831',
   gray: '#888',
+  lightGray: '#ddd',
 };
 
 export default theme;

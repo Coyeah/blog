@@ -51,7 +51,7 @@ export default () => {
 }
 
 const query = graphql`
-query blogList {
+query Posts {
   allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
     edges {
       node {
@@ -61,7 +61,7 @@ query blogList {
           path
         }
         id
-        excerpt(format: PLAIN)
+        excerpt(format: PLAIN, pruneLength: 80)
       }
     }
   }

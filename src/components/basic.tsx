@@ -8,6 +8,7 @@ import theme from '../styled/theme';
 
 export interface BasicProps {
   seo?: SeoProps
+  title?: string;
 }
 
 const Link: React.FC<{ to: string }> = ({ to, children }) => {
@@ -17,15 +18,16 @@ const Link: React.FC<{ to: string }> = ({ to, children }) => {
 export default (props: PropsWithChildren<BasicProps>) => {
   const { seo } = props;
   const { site: { siteMetadata: { title, since, owner, author } } } = useStaticQuery(query);
+  const helmetTitle = props.title ? `${props.title} | ${title}` : title;
   return (
     <>
-    <Helmet title={title}>
+    <Helmet title={helmetTitle}>
       <link rel="shortcut icon" href="/favicon.ico" />
     </Helmet>
     <GlobalStyle />
     <LayoutDiv>
       <SEO {...seo} />
-      <div style={{borderBottom: `1px solid #bbb`}}>
+      <div style={{borderBottom: `1px solid ${theme.lightGray}`}}>
         <HeaderDiv>
           <div>{title}</div>
           <NavDiv>
