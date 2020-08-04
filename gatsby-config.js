@@ -30,6 +30,13 @@ module.exports = {
         excerpt_separator: `<!-- endexcerpt -->`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/about`,
+        name: `about`,
+      },
+    },
     'gatsby-transformer-remark'
   ],
 }

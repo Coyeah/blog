@@ -15,6 +15,9 @@ position: relative;
 const PageFooterDiv = styled.div`
 display: inline-block;
 width: 50%;
+overflow:hidden; //超出的文本隐藏
+text-overflow:ellipsis; //溢出用省略号显示
+white-space:nowrap; //溢出不换行
 `;
 const AvatarDiv = styled.div`
   position: absolute;
@@ -48,14 +51,14 @@ const BioTemplate: React.FC<any> = ({ data, pageContext, location }) => {
       <HrDiv />
       <div className={styles.content} dangerouslySetInnerHTML={{ __html: post.html }} />
       <div style={{ marginTop: '4rem' }}>
-        <PageFooterDiv style={{ textAlign: 'left' }}>{next && (
+        <PageFooterDiv style={{ textAlign: 'left', paddingRight: '10%' }}>{next && (
           <Link to={`/${next.frontmatter.path}`}>{'\< '}{next.frontmatter.title}</Link>
         )}</PageFooterDiv>
-        <PageFooterDiv style={{ textAlign: 'right' }}>{previous && (
+        <PageFooterDiv style={{ textAlign: 'right', paddingLeft: '10%' }}>{previous && (
           <Link to={`/${previous.frontmatter.path}`}>{previous.frontmatter.title}{' \>'}</Link>
         )}</PageFooterDiv>
       </div>
-      <HrDiv>
+      <HrDiv style={{marginTop: 4}}>
         <AvatarDiv />
       </HrDiv>
       <div className={styles.name}>coyeah</div>
@@ -68,7 +71,7 @@ export default BioTemplate;
 
 export const pageQuery = graphql`
 query PostBySlug($slug: String!) {
-  markdownRemark(fields: {slug: {eq: $slug}}) {
+  markdownRemark(fields: {slug: {eq: $slug}}, fileAbsolutePath: {regex: "/content\/blog/"}) {
     frontmatter {
       title
       date(formatString: "MMMM DD, YYYY")

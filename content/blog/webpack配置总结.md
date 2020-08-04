@@ -5,12 +5,6 @@ tag: 'Webpack'
 path: 'webpack-configuration-summay'
 ---
 
-| 题目            | 创建时间            | 标签    |
-| --------------- | ------------------- | ------- |
-| webpack配置总结 | 2019-04-07 11:33:23 | Webpack |
-
-------
-
 ## webpack 学习与配置总结
 
 ### What is webpack

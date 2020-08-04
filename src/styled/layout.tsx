@@ -51,9 +51,9 @@ export const HeaderDiv = styled(mediaDiv)`
 width: 100%;
 display: flex;
 justify-content: space-between;
-align-items: flex-end;
+align-items: center;
 font-size: 1.4rem;
-margin: 8px auto;
+margin: 4px auto;
 `;
 
 export const ContentDiv = styled(mediaDiv)`

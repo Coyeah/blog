@@ -5,7 +5,7 @@ const {
 
 const query = `
 query PostsNode {
-  allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+  allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {fileAbsolutePath: {regex: "/content\/blog/"}}) {
     edges {
       node {
         frontmatter {
@@ -41,6 +41,7 @@ exports.createPages = async ({
     const next = index === 0 ? null : posts[index - 1].node;
     createPage({
       path: post.node.frontmatter.path,
+      title: post.node.frontmatter.title,
       component: bio,
       context: {
         previous,
