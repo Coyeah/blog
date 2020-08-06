@@ -106,7 +106,9 @@ mysql -h 127.0.0.1 -P 53306 -u root -p
 
 这里有个问题就是发现一直没办法通过 `Sequel Pro` 来连接 docker mysql。报错如下：
 
-> 'caching_sha2_password' cannot be loaded: dlopen(/usr/local/mysql/lib/plugin/caching_sha2_password.so, 2): image not found
+```javascript
+'caching_sha2_password' cannot be loaded: dlopen(/usr/local/mysql/lib/plugin/caching_sha2_password.so, 2): image not found
+```
 
 这个不仅仅是在连接 docker mysql 中会出现的问题，即便本地安装的 mysql 也会有这样的问题。因为 MySql8.0 版本 和 5.0 的加密规则不一样，而现在的可视化工具只支持旧的加密方式。此问题有两种方法，一种是更新 Navicat 驱动来解决此问题，另一种是将 MySQL 用户登录的加密规则修改为 mysql_native_password，第一种方法我试过了没有起作用，我这里采用第二种方法。
 
