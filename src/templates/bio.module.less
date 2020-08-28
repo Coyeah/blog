@@ -1,4 +1,7 @@
- .content {
+@backgroundColor: rgba(0, 0, 0, 0.03);
+@blockRadius: 8px;
+
+.content {
   line-height: 2rem;
 
   & * {
@@ -6,37 +9,40 @@
   }
 
   & blockquote {
-    border-left: 3px solid #00adb5;
+    border-left: 4px solid #00adb5;
     margin: 0px;
     padding: 0.2rem 1.8rem;
+    border-bottom-right-radius: @blockRadius;
+    border-top-right-radius: @blockRadius;
+    background-color: @backgroundColor;
   }
 
   & p > code {
-    background-color: #dfdfdf;
-    border-radius: 4px;
+    background-color: @backgroundColor;
+    border-radius: 2px;
     margin-left: 4px;
     margin-right: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   & pre {
-    background-color: #eaeaea;
-    border: 1px solid #dfdfdf;
-    border-radius: 6px;
-    padding: 24px 8px;
+    background-color: @backgroundColor;
+    border: 2px solid #ddd;
+    border-radius: @blockRadius;
+    padding: 18px 8px;
     overflow: auto;
   }
- }
+}
 
- .name {
-   font-weight: 800;
-   font-size: 1.2rem;
-   line-height: 2rem;
-   color: #222831;
- }
+.name {
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: #222831;
+}
 
- .desc {
+.desc {
   font-size: 1rem;
   color: #555;
- }
+}
