@@ -33,7 +33,7 @@ margin: auto;
 }
 
 @media ${device.tablet} {
-  max-width: 700px;
+  max-width: 750px;
 }
 
 @media ${device.desktop} {
@@ -72,8 +72,10 @@ line-height: 1.4rem;
 `;
 
 export const NavDiv = styled.div`
-font-size: 0.8rem;
+font-size: 0.9rem;
+padding: 14px 0px;
 & > a {
+  font-weight: 500;
   margin: 0px 12px;
 }
 `;

@@ -75,7 +75,7 @@ body,
   margin: 0px;
   background-color: #eee;
   color: ${theme.black};
-  font-size: 16px;
+  font-size: 18px;
   font-family: "Verdana", "STXihei";
 }
 
