@@ -27,7 +27,6 @@
   "homepage": "https://github.com/Coyeah/blog#readme",
   "dependencies": {
     "gatsby": "^3.3.1",
-    "gatsby-plugin-disqus": "^1.2.2",
     "gatsby-plugin-feed": "^3.2.0",
     "gatsby-plugin-gatsby-cloud": "^2.2.0",
     "gatsby-plugin-google-analytics": "^3.2.0",
